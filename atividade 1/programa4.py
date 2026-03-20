@@ -14,3 +14,4 @@ if media >= 7:
     print("O aluno esta aprovado :")
 else:
      print("O aluno esta reprovado :")
+     
