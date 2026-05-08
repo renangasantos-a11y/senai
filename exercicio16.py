@@ -1,8 +1,12 @@
-import math
+metros_por_blusa = 120
+metros_por_novelo = 125
 
-blusas = int(input("Digite a quantidade de blusas: "))
+# Entrada
+qtd_blusas = int(input("Quantas blusas serão produzidas? "))
 
-total_fio = blusas * 120
-novelos = math.ceil(total_fio / 125)
+# Cálculo
+total_metros_necessarios = qtd_blusas * metros_por_blusa
+# math.ceil garante que se der 1.1 novelos, ele arredonde para 2
+total_novelos =(total_metros_necessarios / metros_por_novelo)
 
-print("Quantidade de novelos necessários:", novelos)
+print(f"Para produzir {qtd_blusas} blusas, você precisará comprar {total_novelos} novelos.")
