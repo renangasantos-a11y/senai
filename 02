@@ -1,0 +1,15 @@
+total_acumulado = 0
+contador = 0
+
+while total_acumulado < 100:
+    venda = float(input("Digite o valor do picolé vendido: R$ "))
+
+    total_acumulado = total_acumulado + venda
+    contador = contador + 1
+
+    print(f"Total acumulado: R$ {total_acumulado:.2f}")
+    print(f"Quantidade de vendas: {contador}")
+
+print("\nMeta de R$ 100,00 atingida!")
+print(f"Valor total vendido: R$ {total_acumulado:.2f}")
+print(f"Total de picolés vendidos: {contador}")
