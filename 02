@@ -1,15 +1,48 @@
+print("\033[1mSEJA BEM-VINDO AO PROGRAMA META DE VENDAS DIARIAS DESENVOLVIDO POR RENAN, CLEITON E JOICE!\033[0m")
+
+# Variável acumuladora:
+# "total_acumulado" começa com valor 0
+# e vai somando o valor de cada venda realizada.
 total_acumulado = 0
-contador = 1
 
+# Variável contadora:
+# "contador" registra a quantidade de picolés vendidos.
+contador = 0
+
+print("")
+
+# O programa continuará funcionando
+# enquanto o total acumulado for menor que 100.
 while total_acumulado < 100:
+
     venda = float(input("Digite o valor do picolé vendido: R$ "))
+    print("                        ")
 
-    total_acumulado = total_acumulado + venda
-    contador = contador + 1
+    # Aqui acontece a acumulação:
+    # o valor da venda é adicionado ao total acumulado.
+    total_acumulado += venda
 
+    # O contador aumenta 1 a cada venda realizada.
+    contador += 1
+    
     print(f"Total acumulado: R$ {total_acumulado:.2f}")
-    print(f"Quantidade de vendas: {contador}")
+    print("                                 ")
 
-print("\nMeta de R$ 100,00 atingida!")
+    print(f"Quantidade de vendas: {contador}")
+    print("                                 ")
+
+    # Calcula quanto falta para atingir a meta.
+    falta = 100 - total_acumulado
+
+    # Verifica se a meta ainda não foi alcançada.
+    if total_acumulado < 100:
+        print(f"Faltam R$ {falta:.2f} para atingir a meta.\n")
+        print("---------------------------------")
+
+print("")
+
+# Exibe o resultado final das vendas.
 print(f"Valor total vendido: R$ {total_acumulado:.2f}")
 print(f"Total de picolés vendidos: {contador}")
+
+print("\033[1mPARABÉNS A META FOI ATINGIDA!\033[0m")
