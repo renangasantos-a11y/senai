@@ -1,0 +1,36 @@
+print("--- SISTEMA DE CAIXA: SUPERMERCADO PREÇO BOM ---")
+estoque_disponivel = 50
+
+while True:
+    print(f"\nEstoque atual: {estoque_disponivel} unidades.")
+    print("1. Registrar Venda")
+    print("2. Fechar Caixa e Sair")
+    
+    opcao = input("Escolha uma opção: ")
+    
+    if opcao == "1":
+        quantidade = int(input("Digite a quantidade de produtos vendidos: "))
+        
+        # 1. Validação do limite de segurança por venda
+        if quantidade > 10:
+            print("Erro: Não é permitido vender mais de 10 unidades deste produto por vez!")
+        
+        # 2. Validação se há estoque suficiente para a venda
+        elif quantidade > estoque_disponivel:
+            print(f"Erro: Estoque insuficiente! Você só tem {estoque_disponivel} unidades.")
+            
+        else:
+            # Atualização do estoque (só acontece se passar nas validações acima)
+            estoque_disponivel = estoque_disponivel - quantidade
+            print(f"Venda de {quantidade} unidades registrada com sucesso.")
+            
+            # Alerta se o estoque acabou exatamente agora
+            if estoque_disponivel == 0:
+                print("ALERTA: O estoque deste produto chegou a zero!")
+                
+    elif opcao == "2":
+        print("Fechando o sistema de caixa... Até logo!")
+        break
+        
+    else:
+        print("Opção inválida! Tente novamente.")
